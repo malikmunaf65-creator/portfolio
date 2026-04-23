@@ -27,16 +27,16 @@ body{
   overflow-x:hidden;
   cursor:none;
 }
- 
+
 /* ── CURSOR ── */
 #cursor{position:fixed;width:10px;height:10px;background:var(--orange);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s,height .2s}
 #cursor-ring{position:fixed;width:36px;height:36px;border:1px solid rgba(245,158,11,0.4);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:all .12s ease-out}
 body:has(a:hover) #cursor,body:has(button:hover) #cursor{width:18px;height:18px;background:var(--orange2)}
 body:has(a:hover) #cursor-ring{width:50px;height:50px;border-color:var(--orange)}
- 
+
 /* ── NOISE ── */
 body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:.5}
- 
+
 /* ══════════════════════════════════════
    FLOATING CHARACTER — fixed, scrolls with page
 ══════════════════════════════════════ */
@@ -54,7 +54,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
   transform:translateY(30px) scale(0.95);
   opacity:0;
 }
- 
+
 /* The speech bubble that changes per section */
 #speech-bubble{
   position:absolute;
@@ -83,7 +83,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
   border-right:0 solid transparent;
   border-top:8px solid rgba(245,158,11,0.35);
 }
- 
+
 /* ── AMBIENT GLOW UNDER CHAR ── */
 .char-glow{
   position:absolute;
@@ -95,14 +95,14 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
   animation:glowPulse 3s ease-in-out infinite;
 }
 @keyframes glowPulse{0%,100%{opacity:.6;transform:translateX(-50%) scaleX(1)}50%{opacity:1;transform:translateX(-50%) scaleX(1.15)}}
- 
+
 /* ── FLOATING PARTICLES around char ── */
 .char-particle{
   position:absolute;
   border-radius:50%;
   pointer-events:none;
 }
- 
+
 /* ══════════════════════════
    NAVBAR
 ══════════════════════════ */
@@ -120,7 +120,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 .side-socials a{color:var(--muted);transition:color .2s,transform .2s;display:flex;align-items:center;justify-content:center}
 .side-socials a:hover{color:var(--orange);transform:scale(1.2)}
 .side-socials svg{width:15px;height:15px;fill:currentColor}
- 
+
 /* ══════════════════════════
    HERO
 ══════════════════════════ */
@@ -146,11 +146,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 .btn-orange:hover{background:#fbbf24;transform:translateY(-2px);box-shadow:0 12px 36px rgba(245,158,11,0.3)}
 .btn-outline{background:transparent;color:var(--white);border:1px solid var(--border)}
 .btn-outline:hover{border-color:var(--orange);color:var(--orange);transform:translateY(-2px)}
- 
+
 /* hero center — space for the fixed character */
 .hero-center{height:100vh;display:flex;align-items:center;justify-content:center;position:relative;z-index:2}
 .hero-center-placeholder{width:300px;height:400px;/* invisible placeholder for layout */}
- 
+
 /* right cards */
 .hero-right{display:flex;flex-direction:column;gap:18px;z-index:2;opacity:0;animation:fadeLeft .9s 1s forwards}
 .skill-card{background:rgba(13,16,23,0.92);border:1px solid var(--border);border-radius:4px;padding:24px 28px;position:relative;transition:border-color .3s,transform .3s}
@@ -165,13 +165,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 .resume-link{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted2);text-decoration:none;display:flex;align-items:center;gap:8px;transition:color .2s;margin-top:4px;align-self:flex-end}
 .resume-link::after{content:'↗';font-size:13px}
 .resume-link:hover{color:var(--orange)}
- 
+
 /* scroll indicator */
 .scroll-line{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;z-index:2;opacity:0;animation:fadeIn 1s 2.2s forwards}
 .scroll-line span{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.2em;color:var(--muted);text-transform:uppercase}
 .scroll-bar{width:1px;height:48px;background:linear-gradient(to bottom,var(--orange),transparent);animation:scrollPulse 2s ease-in-out infinite}
 @keyframes scrollPulse{0%,100%{opacity:.4}50%{opacity:1}}
- 
+
 /* ══════════════════════════
    ABOUT
 ══════════════════════════ */
@@ -201,7 +201,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 .tl-year{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--orange);min-width:38px;margin-top:2px}
 .tl-content h4{font-size:14px;font-weight:600;margin-bottom:3px}
 .tl-content p{font-size:12px;color:var(--muted2)}
- 
+
 /* ══════════════════════════
    WORK
 ══════════════════════════ */
@@ -234,7 +234,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 .proj-dot{position:absolute;top:10px;right:10px;width:7px;height:7px;border-radius:50%;background:var(--orange);animation:blink 2s ease-in-out infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
 @keyframes scan{from{transform:translateY(-50%)}to{transform:translateY(50%)}}
- 
+
 /* ══════════════════════════
    CONTACT
 ══════════════════════════ */
@@ -256,7 +256,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 .contact-info{margin-top:40px;display:flex;flex-direction:column;gap:14px}
 .contact-item{display:flex;align-items:center;gap:12px;color:var(--muted2);font-size:13px}
 .contact-item svg{width:13px;height:13px;fill:var(--orange);flex-shrink:0}
- 
+
 /* ── FOOTER ── */
 footer{position:relative;z-index:1;padding:26px 80px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
 footer p{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted)}
@@ -264,7 +264,7 @@ footer span{color:var(--orange)}
 .footer-links{display:flex;gap:28px}
 .footer-links a{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);text-decoration:none;transition:color .2s}
 .footer-links a:hover{color:var(--orange)}
- 
+
 /* ── ANIMATIONS ── */
 @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
@@ -275,9 +275,9 @@ footer span{color:var(--orange)}
 .reveal-left.visible{opacity:1;transform:translateX(0)}
 .reveal-right{opacity:0;transform:translateX(26px);transition:opacity .7s ease,transform .7s ease}
 .reveal-right.visible{opacity:1;transform:translateX(0)}
- 
+
 /* ── CHARACTER ANIMATIONS ── */
- 
+
 /* Body breathe */
 @keyframes breathe{
   0%,100%{transform:translateY(0) scaleY(1)}
@@ -345,7 +345,7 @@ footer span{color:var(--orange)}
   33%{transform:rotate(0.5deg)}
   66%{transform:rotate(-0.5deg)}
 }
- 
+
 /* responsive */
 @media(max-width:1100px){
   #char-container{right:20px;width:260px;height:340px;transform:scale(.85);transform-origin:bottom right}
@@ -373,27 +373,27 @@ footer span{color:var(--orange)}
 </style>
 </head>
 <body>
- 
+
 <div id="cursor"></div>
 <div id="cursor-ring"></div>
- 
+
 <!-- ═══════════════════════════════════════
      ANIMATED BOY — follows entire scroll
 ═══════════════════════════════════════ -->
 <div id="char-container">
- 
+
   <!-- Speech bubble -->
   <div id="speech-bubble">Hey! I'm Munaf 👋</div>
- 
+
   <!-- Glow under feet -->
   <div class="char-glow"></div>
- 
+
   <!-- Floating code particles -->
   <div id="char-particles"></div>
- 
+
   <!-- THE BOY SVG -->
   <svg id="boy-svg" viewBox="0 0 320 420" fill="none" xmlns="http://www.w3.org/2000/svg" width="320" height="420">
- 
+
     <!-- ── DESK ── -->
     <!-- Desk surface -->
     <rect x="30" y="280" width="260" height="14" rx="3" fill="#1a1f2e"/>
@@ -403,7 +403,7 @@ footer span{color:var(--orange)}
     <rect x="260" y="294" width="10" height="80" rx="2" fill="#141824"/>
     <!-- Cross beam -->
     <rect x="50" y="340" width="220" height="4" rx="2" fill="#141824"/>
- 
+
     <!-- ── MONITOR ── -->
     <g id="monitor">
       <!-- Stand base -->
@@ -454,7 +454,7 @@ footer span{color:var(--orange)}
       <circle cx="105" cy="235" r="2" fill="#f59e0b" opacity=".7"/>
       <rect x="110" y="233.5" width="30" height="3" rx="1" fill="#1e2a40"/>
     </g>
- 
+
     <!-- ── KEYBOARD ── -->
     <g id="keyboard">
       <rect x="96" y="286" width="110" height="13" rx="3" fill="#151c2a"/>
@@ -485,11 +485,11 @@ footer span{color:var(--orange)}
       <!-- Spacebar -->
       <rect x="116" y="298.5" width="70" height="3.5" rx="1" fill="#1e2a40"/>
     </g>
- 
+
     <!-- ── MOUSE ── -->
     <rect x="214" y="284" width="18" height="13" rx="6" fill="#151c2a" stroke="#1e2a40" stroke-width=".8"/>
     <line x1="223" y1="284" x2="223" y2="297" stroke="#1e2a40" stroke-width=".8"/>
- 
+
     <!-- ── COFFEE CUP ── -->
     <g id="coffee">
       <rect x="250" y="268" width="22" height="15" rx="3" fill="#1a2035"/>
@@ -506,7 +506,7 @@ footer span{color:var(--orange)}
         <animate attributeName="opacity" values="0.12;0.3;0.12" dur="3s" repeatCount="indefinite"/>
       </path>
     </g>
- 
+
     <!-- ── CHAIR ── -->
     <g id="chair" style="animation:chairRock 5s ease-in-out infinite">
       <rect x="95" y="316" width="130" height="8" rx="3" fill="#1a2035"/><!-- seat -->
@@ -525,10 +525,10 @@ footer span{color:var(--orange)}
       <circle cx="160" cy="381" r="5" fill="#141e30"/>
       <circle cx="160" cy="381" r="2.5" fill="#1a2035"/>
     </g>
- 
+
     <!-- ── BODY GROUP (breathes) ── -->
     <g id="body-group" style="animation:breathe 4s ease-in-out infinite">
- 
+
       <!-- TORSO / HOODIE -->
       <path d="M115 220 C108 240 102 260 100 316 L220 316 C218 260 212 240 205 220 Z" fill="#1a2035"/>
       <!-- hoodie pocket -->
@@ -542,15 +542,15 @@ footer span{color:var(--orange)}
       <!-- hoodie shoulder shading -->
       <path d="M115 220 C108 230 104 245 103 260" stroke="#222d45" stroke-width="3" fill="none" opacity=".5"/>
       <path d="M205 220 C212 230 216 245 217 260" stroke="#222d45" stroke-width="3" fill="none" opacity=".5"/>
- 
+
       <!-- NECK -->
       <rect x="150" y="196" width="20" height="28" rx="5" fill="#e8c49a"/>
       <!-- neck shadow -->
       <rect x="150" y="196" width="8" height="28" rx="4" fill="rgba(0,0,0,0.1)"/>
- 
+
       <!-- HEAD GROUP -->
       <g id="head-group" style="animation:headBob 4s ease-in-out infinite">
- 
+
         <!-- CAP BRIM -->
         <ellipse cx="160" cy="128" rx="46" ry="8" fill="#111520"/>
         <ellipse cx="185" cy="136" rx="16" ry="5" fill="#0d1118" transform="rotate(15,185,136)"/>
@@ -565,12 +565,12 @@ footer span{color:var(--orange)}
         <path d="M118 128 C130 124 150 122 160 122 C170 122 190 124 202 128" stroke="#141e30" stroke-width="1.5" fill="none"/>
         <!-- cap logo -->
         <text x="153" y="112" font-size="9" fill="#f59e0b" font-family="monospace" opacity=".8">AI</text>
- 
+
         <!-- FACE -->
         <ellipse cx="160" cy="155" rx="34" ry="36" fill="#e8c49a"/>
         <!-- face shading -->
         <ellipse cx="148" cy="160" rx="12" ry="18" fill="rgba(0,0,0,0.04)"/>
- 
+
         <!-- MASK (like in the reference image) -->
         <rect x="130" y="155" width="60" height="30" rx="10" fill="#1a2035"/>
         <rect x="130" y="155" width="60" height="4" rx="2" fill="#222d45"/>
@@ -584,7 +584,7 @@ footer span{color:var(--orange)}
         <circle cx="165" cy="172" r="5" fill="#141e30" opacity=".5"/>
         <circle cx="155" cy="172" r="2.5" fill="#1a2035" opacity=".6"/>
         <circle cx="165" cy="172" r="2.5" fill="#1a2035" opacity=".6"/>
- 
+
         <!-- EYES (above mask) -->
         <g id="left-eye" style="transform-origin:144px 147px;animation:blink-eye 5s ease-in-out infinite">
           <ellipse cx="144" cy="147" rx="7" ry="7" fill="#1a1a2e"/>
@@ -610,17 +610,17 @@ footer span{color:var(--orange)}
           <line x1="181" y1="141" x2="182" y2="138" stroke="#5a4a3a" stroke-width="1.2" stroke-linecap="round"/>
           <line x1="183" y1="144" x2="185" y2="141" stroke="#5a4a3a" stroke-width="1.2" stroke-linecap="round"/>
         </g>
- 
+
         <!-- eyebrows -->
         <path d="M135 138 Q144 134 153 137" stroke="#5a4a3a" stroke-width="2" fill="none" stroke-linecap="round"/>
         <path d="M167 137 Q176 134 185 138" stroke="#5a4a3a" stroke-width="2" fill="none" stroke-linecap="round"/>
- 
+
         <!-- ear -->
         <ellipse cx="126" cy="155" rx="5" ry="8" fill="#e0b88a"/>
         <ellipse cx="126" cy="155" rx="3" ry="5" fill="#d4a87a"/>
         <ellipse cx="194" cy="155" rx="5" ry="8" fill="#e0b88a"/>
         <ellipse cx="194" cy="155" rx="3" ry="5" fill="#d4a87a"/>
- 
+
         <!-- headphone / earpiece (techy) -->
         <path d="M118 148 Q112 148 112 156 Q112 164 118 165" stroke="#1a2035" stroke-width="3" fill="none" stroke-linecap="round"/>
         <circle cx="113" cy="157" r="5" fill="#1a2035"/>
@@ -628,13 +628,13 @@ footer span{color:var(--orange)}
           <animate attributeName="opacity" values="0.5;0.9;0.5" dur="2s" repeatCount="indefinite"/>
         </circle>
       </g><!-- end head-group -->
- 
+
       <!-- SHOULDERS / HOODIE HOOD -->
       <path d="M115 220 C100 215 88 200 90 185 C92 170 105 165 115 168" fill="#1a2035"/>
       <path d="M205 220 C220 215 232 200 230 185 C228 170 215 165 205 168" fill="#1a2035"/>
       <!-- hood behind head -->
       <path d="M118 168 C110 162 108 148 112 138 C118 122 135 118 160 118 C185 118 202 122 208 138 C212 148 210 162 202 168" fill="#151e30" opacity=".4"/>
- 
+
       <!-- LEFT ARM (typing) -->
       <g id="left-arm" style="animation:typeLeft 0.5s ease-in-out infinite">
         <path d="M115 240 C105 255 100 268 98 282" stroke="#1a2035" stroke-width="18" stroke-linecap="round" fill="none"/>
@@ -646,7 +646,7 @@ footer span{color:var(--orange)}
         <rect x="102" y="279" width="6" height="10" rx="3" fill="#e0ba8a" transform="rotate(5,105,284)"/>
         <rect x="108" y="281" width="5" height="9" rx="3" fill="#e0ba8a" transform="rotate(12,110,285)"/>
       </g>
- 
+
       <!-- RIGHT ARM (typing) -->
       <g id="right-arm" style="animation:typeRight 0.5s ease-in-out infinite">
         <path d="M205 240 C215 255 220 268 222 282" stroke="#1a2035" stroke-width="18" stroke-linecap="round" fill="none"/>
@@ -658,9 +658,9 @@ footer span{color:var(--orange)}
         <rect x="225" y="278" width="6" height="11" rx="3" fill="#e0ba8a" transform="rotate(5,228,283)"/>
         <rect x="232" y="280" width="6" height="10" rx="3" fill="#e8c49a" transform="rotate(15,235,285)"/>
       </g>
- 
+
     </g><!-- end body-group -->
- 
+
     <!-- ── AMBIENT EXTRAS ── -->
     <!-- Small lamp on desk -->
     <g id="lamp">
@@ -675,7 +675,7 @@ footer span{color:var(--orange)}
         <animate attributeName="opacity" values="0.7;0.3;0.7" dur="3.5s" repeatCount="indefinite"/>
       </circle>
     </g>
- 
+
     <!-- Phone on desk -->
     <g>
       <rect x="230" y="272" width="14" height="10" rx="2" fill="#1a2035"/>
@@ -683,7 +683,7 @@ footer span{color:var(--orange)}
         <animate attributeName="opacity" values="0.3;0.7;0.3" dur="4s" repeatCount="indefinite"/>
       </rect>
     </g>
- 
+
     <defs>
       <linearGradient id="monGrad" x1="97" y1="157" x2="223" y2="238" gradientUnits="userSpaceOnUse">
         <stop offset="0%" stop-color="#1e4a7f" stop-opacity=".5"/>
@@ -697,7 +697,7 @@ footer span{color:var(--orange)}
   </svg>
 </div>
 <!-- END CHARACTER -->
- 
+
 <!-- ── SIDE SOCIALS ── -->
 <div class="side-socials">
   <a href="https://github.com" target="_blank">
@@ -710,7 +710,7 @@ footer span{color:var(--orange)}
     <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.912-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
   </a>
 </div>
- 
+
 <!-- ── NAVBAR ── -->
 <nav>
   <div class="nav-email"><span>//</span> malikmunaf65@gmail.com</div>
@@ -721,7 +721,7 @@ footer span{color:var(--orange)}
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
- 
+
 <!-- ══════ HERO ══════ -->
 <section id="hero">
   <div class="hero-left">
@@ -759,7 +759,7 @@ footer span{color:var(--orange)}
   </div>
   <div class="scroll-line"><span>Scroll</span><div class="scroll-bar"></div></div>
 </section>
- 
+
 <!-- ══════ ABOUT ══════ -->
 <section id="about">
   <div class="about-number">02</div>
@@ -783,7 +783,7 @@ footer span{color:var(--orange)}
     </div>
   </div>
 </section>
- 
+
 <!-- ══════ WORK ══════ -->
 <section id="work">
   <div class="work-header reveal">
@@ -795,9 +795,9 @@ footer span{color:var(--orange)}
       A selection of projects I've built — from AI models to full-stack deployments.
     </p>
   </div>
- 
+
   <div class="work-grid reveal">
- 
+
     <!-- PROJECT 01 -->
     <div class="project-item wide">
       <div class="corner-tl"></div><div class="corner-br"></div>
@@ -821,7 +821,7 @@ footer span{color:var(--orange)}
       </div>
       <a href="#" class="proj-arrow">↗</a>
     </div>
- 
+
     <!-- PROJECT 02 -->
     <div class="project-item">
       <div class="corner-tl"></div><div class="corner-br"></div>
@@ -840,7 +840,7 @@ footer span{color:var(--orange)}
       </p>
       <a href="https://github.com/malikmunaf65-creator/house-price-prediction" target="_blank" class="proj-arrow">↗</a>
     </div>
- 
+
     <!-- PROJECT 03 -->
     <div class="project-item">
       <div class="corner-tl"></div><div class="corner-br"></div>
@@ -859,10 +859,10 @@ footer span{color:var(--orange)}
       </p>
       <a href="https://github.com/malikmunaf65-creator/voice-recognition-system" target="_blank" class="proj-arrow">↗</a>
     </div>
- 
+
   </div>
 </section>
- 
+
 <!-- ══════ CERTIFICATIONS ══════ -->
 <section id="certifications">
   <div class="work-header reveal">
@@ -874,9 +874,9 @@ footer span{color:var(--orange)}
       Verified certifications across AI, cloud, and development.
     </p>
   </div>
- 
+
   <div class="work-grid reveal">
- 
+
     <div class="project-item">
       <div class="corner-tl"></div><div class="corner-br"></div>
       <div class="proj-num">// 01</div>
@@ -891,7 +891,7 @@ footer span{color:var(--orange)}
       </div>
       <a href="#" class="proj-arrow">↗</a>
     </div>
- 
+
     <div class="project-item">
       <div class="corner-tl"></div><div class="corner-br"></div>
       <div class="proj-num">// 02</div>
@@ -906,7 +906,7 @@ footer span{color:var(--orange)}
       </div>
       <a href="#" class="proj-arrow">↗</a>
     </div>
- 
+
     <div class="project-item">
       <div class="corner-tl"></div><div class="corner-br"></div>
       <div class="proj-num">// 03</div>
@@ -920,10 +920,10 @@ footer span{color:var(--orange)}
       </div>
       <a href="#" class="proj-arrow">↗</a>
     </div>
- 
+
   </div>
 </section>
- 
+
 <!-- ══════ CONTACT ══════ -->
 <section id="contact">
   <div class="reveal-left">
@@ -941,7 +941,7 @@ footer span{color:var(--orange)}
       </div>
     </div>
   </div>
- 
+
   <form id="contact-form" class="contact-form reveal-right">
     <div class="form-group">
       <label>Name</label>
@@ -964,7 +964,7 @@ footer span{color:var(--orange)}
     </button>
   </form>
 </section>
- 
+
 <footer>
   <p>© 2025 <span>Munaf Malik</span> — All rights reserved</p>
   <div class="footer-links">
@@ -973,7 +973,7 @@ footer span{color:var(--orange)}
     <a href="#contact">Contact</a>
   </div>
 </footer>
- 
+
 <!-- ── FORM SUBMIT ── -->
 <script>
 document.getElementById("contact-form").addEventListener("submit", async function(e){
@@ -1000,7 +1000,7 @@ document.getElementById("contact-form").addEventListener("submit", async functio
   }
 });
 </script>
- 
+
 <!-- ── CURSOR + SCROLL REVEAL + CHARACTER ── -->
 <script>
 /* ── CURSOR ── */
@@ -1008,13 +1008,13 @@ const cur=document.getElementById('cursor'),ring=document.getElementById('cursor
 let mx=0,my=0,rx=0,ry=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
 (function animRing(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animRing)})();
- 
+
 /* ── SCROLL REVEAL ── */
 const obs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),80);obs.unobserve(e.target)}})
 },{threshold:.08});
 document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el=>obs.observe(el));
- 
+
 /* ── CHARACTER SCROLL BEHAVIOUR ── */
 const charContainer = document.getElementById('char-container');
 const speechBubble  = document.getElementById('speech-bubble');
@@ -1023,7 +1023,7 @@ const leftArm       = document.getElementById('left-arm');
 const rightArm      = document.getElementById('right-arm');
 const headGroup     = document.getElementById('head-group');
 const bodyGroup     = document.getElementById('body-group');
- 
+
 const sectionData = [
   { id:'hero',           msg:"Hey! I'm Munaf 👋",        anim:'typing'  },
   { id:'about',          msg:"This is my story! 📖",      anim:'thinking'},
@@ -1031,10 +1031,10 @@ const sectionData = [
   { id:'certifications', msg:"Check my certifications 📜",anim:'excited' },
   { id:'contact',        msg:"Let's build together! 💬",  anim:'wave'    },
 ];
- 
+
 let currentAnim = 'typing';
 let bubbleTimeout;
- 
+
 function showBubble(msg){
   clearTimeout(bubbleTimeout);
   speechBubble.classList.remove('show');
@@ -1044,7 +1044,7 @@ function showBubble(msg){
   },200);
   bubbleTimeout = setTimeout(()=>speechBubble.classList.remove('show'), 5000);
 }
- 
+
 function setAnim(anim){
   if(anim===currentAnim)return;
   currentAnim=anim;
@@ -1068,7 +1068,7 @@ function setAnim(anim){
     leftArm.style.animation='none';
   }
 }
- 
+
 function onScroll(){
   const scrollY = window.scrollY;
   const wh = window.innerHeight;
@@ -1081,9 +1081,9 @@ function onScroll(){
     if(rect.top < wh*0.6 && rect.bottom > wh*0.2) setAnim(sec.anim);
   });
 }
- 
+
 setTimeout(()=>showBubble("Hey! I'm Munaf 👋"), 1500);
- 
+
 const secObs = new IntersectionObserver(entries=>{
   entries.forEach(e=>{
     if(!e.isIntersecting)return;
@@ -1093,7 +1093,7 @@ const secObs = new IntersectionObserver(entries=>{
 },{threshold:.3});
 sectionData.forEach(s=>{const el=document.getElementById(s.id);if(el)secObs.observe(el)});
 window.addEventListener('scroll', onScroll, {passive:true});
- 
+
 /* ── FLOATING CODE PARTICLES ── */
 const particleContainer = document.getElementById('char-particles');
 const codeSnippets = ['const','return','async','model','await','def','import','class','if','for','AI','ML','✓','</>','{}'];
@@ -1116,7 +1116,7 @@ function spawnParticle(){
   setTimeout(()=>p.remove(), 3500);
 }
 setInterval(spawnParticle, 800);
- 
+
 /* ── EYE TRACKING ── */
 const leftEye  = document.getElementById('left-eye');
 const rightEye = document.getElementById('right-eye');
@@ -1134,7 +1134,7 @@ document.addEventListener('mousemove', e=>{
   leftEye.style.transform  = `translate(${px}px,${py}px)`;
   rightEye.style.transform = `translate(${px}px,${py}px)`;
 });
- 
+
 /* ── SCREEN CODE ANIMATION ── */
 const codeLines = document.querySelectorAll('#screen-code rect:not(#screen-cursor)');
 let lineIdx=0;
@@ -1148,17 +1148,17 @@ setInterval(()=>{
   lineIdx=(lineIdx+1)%codeLines.length;
 },200);
 </script>
- 
+
 <!-- ── STAGGER WORK GRID ── -->
 <script>
 document.querySelectorAll('.project-item').forEach((el,i)=>{
   el.style.transitionDelay = i * 0.08 + 's';
 });
 </script>
- 
+
 <!-- Phone input library -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
- 
+
 <!-- Init phone input AFTER page loads -->
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -1173,6 +1173,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 </script>
- 
+
 </body>
 </html>
