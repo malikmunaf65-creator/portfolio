@@ -875,7 +875,7 @@ contactForm.addEventListener('submit', async function(e) {
   };
 
   try {
-    await fetch("https://munaf-ai-email-backend.onrender.com/send-email", {
+    await fetch("https://munaf-ai-email-backend.vercel.app/send-email", {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(formData)
