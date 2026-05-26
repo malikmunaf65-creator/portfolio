@@ -1014,6 +1014,18 @@ setInterval(()=>{
 
 /* ── STAGGER PROJECT CARDS ── */
 document.querySelectorAll('.project-item').forEach((el,i)=>{el.style.transitionDelay=i*0.08+'s';});
+/* ── MAKE FULL CARD CLICKABLE ── */
+document.querySelectorAll('.project-item').forEach(card => {
+  const arrow = card.querySelector('.proj-arrow');
+  if (arrow && arrow.getAttribute('href') !== '#contact' && arrow.getAttribute('href') !== '#') {
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', (e) => {
+      if (!e.target.closest('a')) {
+        window.open(arrow.getAttribute('href'), '_blank');
+      }
+    });
+  }
+});
 </script>
 </body>
 </html>
